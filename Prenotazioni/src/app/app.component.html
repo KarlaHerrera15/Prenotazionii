@@ -1,32 +1,32 @@
-<div class="container mt-4 p-4 border">
-
-  <h3>Form di inserimento</h3>
-
-  <div class="border p-4 mb-3 bg-light">
-
-    <p>Nome:</p>
-    <p>Cognome:</p>
-    <p>Indirizzo:</p>
-    <p>Telefono:</p>
-    <p>Email:</p>
-    <p>Data Prenotazione:</p>
-    <p>Ora Prenotazione:</p>
-
+<div class="container mt-4 p-4 main-container">
+  <h2 class="mb-4">Form di inserimento</h2>
+  
+  <div class="card p-4 mb-4 bg-light-blue shadow-sm">
+    <form (ngSubmit)="aggiungiPrenotazione()" #f="ngForm">
+      <div class="row g-3">
+        <div class="col-md-6"><label>Nome:</label><input type="text" name="nome" [(ngModel)]="nuovaPrenotazione.nome" class="form-control" required></div>
+        <div class="col-md-6"><label>Cognome:</label><input type="text" name="cognome" [(ngModel)]="nuovaPrenotazione.cognome" class="form-control" required></div>
+        <div class="col-12"><label>Indirizzo:</label><input type="text" name="indirizzo" [(ngModel)]="nuovaPrenotazione.indirizzo" class="form-control"></div>
+        <div class="col-md-6"><label>Telefono:</label><input type="text" name="telefono" [(ngModel)]="nuovaPrenotazione.telefono" class="form-control"></div>
+        <div class="col-md-6"><label>Email:</label><input type="email" name="email" [(ngModel)]="nuovaPrenotazione.email" class="form-control"></div>
+        <div class="col-md-6"><label>Data Prenotazione:</label><input type="date" name="data" [(ngModel)]="nuovaPrenotazione.dataPrenotazione" class="form-control" required></div>
+        <div class="col-md-6"><label>Ora Prenotazione:</label><input type="time" name="ora" [(ngModel)]="nuovaPrenotazione.oraPrenotazione" class="form-control" required></div>
+      </div>
+      <div class="text-end mt-3">
+        <button type="submit" class="btn btn-salva px-5 py-2">Salva</button>
+      </div>
+    </form>
   </div>
 
-  <button class="btn btn-success mb-4">Salva</button>
+  <hr>
 
-  <h4>Lista prenotazioni</h4>
+  <app-lista-prenotazioni 
+    [prenotazioni]="vettorePrenotazioni" 
+    (selezionata)="mostraDettagli($event)">
+  </app-lista-prenotazioni>
 
-  <div class="border p-3 mb-4 bg-warning-subtle">
-    <!-- qui andrà la lista -->
-  </div>
-
-  <h4>Dettagli prenotazione</h4>
-
-  <div class="border p-3 bg-warning">
-    <!-- qui andranno i dettagli -->
-  </div>
-<pre>{{ prenotazioni | json }}</pre>Z
-
+  <app-dettagli-prenotazione 
+    *ngIf="prenotazioneSelezionata" 
+    [prenotazione]="prenotazioneSelezionata">
+  </app-dettagli-prenotazione>
 </div>

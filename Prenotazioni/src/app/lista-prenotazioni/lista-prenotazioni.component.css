@@ -1,0 +1,13 @@
+.bg-light-yellow {
+  background-color: #fff9c4 !important; /* Giallo chiaro dell'immagine */
+  border: 1px solid #fbc02d;
+}
+
+.prenotazione-item:hover {
+  background-color: #fff176;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}

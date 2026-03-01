@@ -1,0 +1,20 @@
+.main-container {
+  background-color: #d8e6d1; /* Verde chiarissimo dello sfondo immagine */
+  min-height: 100vh;
+  border-radius: 8px;
+}
+
+.bg-light-blue {
+  background-color: #d1e3f3 !important; /* Celeste del form */
+  border: 1px solid #333;
+}
+
+.btn-salva {
+  background-color: #b3d4ad;
+  border: 1px solid #333;
+  color: black;
+}
+
+.btn-salva:hover {
+  background-color: #a2c39c;
+}

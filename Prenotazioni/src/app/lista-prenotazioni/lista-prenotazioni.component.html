@@ -1,0 +1,15 @@
+<h3 class="mt-4">Lista prenotazioni</h3>
+<div class="card p-3 bg-light-yellow border-warning shadow-sm mb-4">
+  <div *ngFor="let p of prenotazioni" 
+       (click)="seleziona(p)" 
+       class="prenotazione-item p-2 mb-1 border-bottom clickable">
+    
+    <strong>
+      {{ p.data || p.dataPrenotazione }} - {{ p.ora || p.oraPrenotazione }} -> {{ p.nome }} {{ p.cognome }}
+    </strong>
+
+  </div>
+  <div *ngIf="prenotazioni.length === 0" class="text-muted">
+    Nessuna prenotazione caricata...
+  </div>
+</div>

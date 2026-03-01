@@ -1,0 +1,14 @@
+<h3 class="mt-4">Dettagli prenotazione</h3>
+<div class="card p-4 bg-light-orange border-dark shadow-sm">
+  <div class="detail-content" *ngIf="prenotazione">
+    <p class="h5">
+        <strong>
+            {{ prenotazione.data || prenotazione.dataPrenotazione }} - 
+            {{ prenotazione.ora || prenotazione.oraPrenotazione }} -> 
+            {{ prenotazione.nome }} {{ prenotazione.cognome }}
+        </strong>
+    </p>
+    <p class="mb-1">Via {{ prenotazione.indirizzo }}</p>
+    <p>TEL: {{ prenotazione.telefono }} - {{ prenotazione.email }}</p>
+  </div>
+</div>
